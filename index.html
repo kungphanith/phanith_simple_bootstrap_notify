@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Phanith Test notify</title>
+
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="jquery-ui-1.11.4/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="fucking_style.css">
+		<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+		<script src="bootstrap-notify.js"></script>
+</head>
+<body>
+	<div class="panel-body" >
+		<h1>Hi, I'm phanith, 
+		</h1>
+		<p>you can use these code to implement with your code. it's fucking funny!!! :)</p>	
+
+		<button type="button" class="btn btn-primary" id="update-action" >Test 1</button>
+		<button type="button" class="btn btn-primary" id="progress-action" >Test 2</button>
+		<button type="button" class="btn btn-primary" id="update-progess-action" >Test 3</button>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+		
+	$(document).ready(function(){
+
+		$('#update-action').click(function(){
+			//Update
+			var notify = $.notify('<strong>Saving</strong> Do not close this page...', { allow_dismiss: false });
+			notify.update({ type: 'success', message: '<strong>Success</strong> Your page has been saved!' });
+		});
+
+		$('#progress-action').click(function(){
+			// Turn of Progress bar on
+			$.notify('I have a progress bar', { showProgressbar: true });
+		});
+
+		$('#update-progess-action').click(function(){
+			// Update Progress bar
+			var notify = $.notify('<strong>Saving</strong> Do not close this page...', { allow_dismiss: false });
+			notify.update({ type: 'warning', mesage: '<strong>Oops</strong> Something happened. Correcting Now', progress: 20 });
+		});
+
+	});
+		
+	</script>
+
+</body>
+</html>
